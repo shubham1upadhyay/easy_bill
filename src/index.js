@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
 import HomePage from './components/HomePage.jsx';
@@ -12,10 +12,9 @@ import UserDetails from './components/UserDetails.jsx';
 
 import reportWebVitals from './reportWebVitals.js';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-     <Router>
+    <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/homepage" element={<HomePage />} />
@@ -27,7 +26,8 @@ root.render(
         <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 reportWebVitals();
