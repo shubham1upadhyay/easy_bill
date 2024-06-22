@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
-import HomePage from './components/HomePage';
-import CreateBillPage from './components/CreateBillPage';
+import HomePage from './components/HomePage.jsx';
+import CreateBillPage from './components/CreateBillPage.jsx';
 import LoginPage from './components/LoginPage.jsx';
-import ProductManagement from './components/ProductManagement';
-import RecentBill from './components/RecentBill';
-import SignUp from './components/SignUp';
-import UserDetails from './components/UserDetails';
+import ProductManagement from './components/ProductManagement.jsx';
+import RecentBill from './components/RecentBill.jsx';
+import SignUp from './components/SignUp.jsx';
+import UserDetails from './components/UserDetails.jsx';
 
 import reportWebVitals from './reportWebVitals.js';
 

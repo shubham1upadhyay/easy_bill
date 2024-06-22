@@ -1,16 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
 import "../styles/CreateBillPage.css";
 import LeftNavbar from "./LeftNavbar";
 import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
 
 const CreateBillPage = ()=>{
 
   const [rows, setRows] = useState([]);
   const tableBodyRef = useRef(null);
-  const navigate = useNavigate();
 
   
     const addRow = () => {
@@ -30,24 +26,8 @@ const CreateBillPage = ()=>{
     }, [rows]);
 
     const generateBill = () => {
-      // Create new PDF document
-      const doc = new jsPDF();
-  
-      // Capture the table as an image using html2canvas
-      html2canvas(tableBodyRef.current).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-  
-        // Add image (table) to PDF document
-        doc.addImage(imgData, "PNG", 10, 10, 180, 150);
-  
-        // Save the PDF
-        doc.save("bill.pdf");
-
-        localStorage.setItem("billData", JSON.stringify(rows));
-
-  // Redirect to recent bill page
-      navigate("/recent-bill");
-      });
+      alert("working")
+    
     };
 
     return (
