@@ -38,10 +38,12 @@
     overflow-y: auto;  
     overflow-x: auto; 
     scrollbar-width: none;
+    
   }
   .tableBody{
    width: 100%;
    overflow-y: auto;
+   
   }
   
   .responsive-table {
@@ -49,6 +51,7 @@
     border-collapse: collapse;
     margin-top: 20px;
     white-space: nowrap;
+    
   }
 
   .tableHeaderDiv {
@@ -96,4 +99,21 @@
   -ms-overflow-style: none;  
   scrollbar-width: thin;   
 }
-  
+.billpageLogo img{
+  width: 60px;
+  /* float: right; */
+}
+.billpage_contact_details{
+  display: flex;
+  justify-content: space-between;
+}
+.billpage_contact_details ul{
+  list-style: none;
+  font-weight: 700;
+}
+.billpage_contact_details li{
+    letter-spacing: 1px;
+}
+.no-border {
+  border: 1px red white;
+}

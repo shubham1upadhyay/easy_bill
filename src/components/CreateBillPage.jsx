@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "../styles/CreateBillPage.css";
 import LeftNavbar from "./LeftNavbar";
 import Navbar from "./Navbar";
+import logo from "../Resources/easy-bill-logo.png"
 
 const CreateBillPage = ()=>{
 
@@ -29,6 +30,17 @@ const CreateBillPage = ()=>{
       alert("working")
     
     };
+
+    const billDetails = JSON.parse(localStorage.getItem("products")) || [];
+    const userData = JSON.parse(localStorage.getItem('userData'));
+
+      const todaysDate = () => {
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, '0'); 
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const year = today.getFullYear();
+        return `${day}-${month}-${year}`;
+      };
 
     return (
         <>
@@ -132,7 +144,7 @@ const CreateBillPage = ()=>{
               {rows.length > 0 && (
                 <tr>
                   <td colspan={9} className="text-center">
-                    <button onClick={generateBill} className="download-btn btn btn-success">Generate Bill</button>
+                    <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="download-btn btn btn-success">Generate Bill</button>
                   </td>
                 </tr>
               )}
@@ -147,6 +159,118 @@ const CreateBillPage = ()=>{
         </div>
 
     </div>
+
+    {/* bill page modal will be updated here */}
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <div className="billpageLogo">
+          <img src={logo} alt="logo" />
+        </div>
+<hr />
+        <div className="billpage_contact_details">
+          <div>
+            <ul>
+              <li>Seller Name   : <span>{userData.sellerName}</span></li>
+              <li>Company Name  : <span>{userData.businessName}</span></li>
+              <li>Mobile Number : <span>{userData.sellerContactNumber}</span></li>
+            </ul>
+          </div>
+
+          <div>
+            <ul>
+              <li>Customer Name   : <span></span></li>
+              <li>Customer Mobile : <span></span></li>
+              <li>Date: <span className="text-danger">{todaysDate()}</span></li>
+            </ul>
+          </div>
+
+        </div>
+        <hr />
+
+
+       <div className="billDetails">
+        <table className="">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">Name</th>
+              <th scope="col">MRP</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Tax</th>
+              <th scope="col">Discount</th>
+              <th scope="col">Amount</th>
+              </tr>
+              </thead>
+              <tbody>
+                {billDetails.map((item, index) => (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+                    <td>{item.productName}</td>
+                    <td>{item.productName}</td>
+                    <td>{item.productName}</td>
+                    <td>{item.productName}</td>
+                    <td>{item.productName}</td>
+                    <td>{item.productName}</td>
+                    <td>{item.productName}</td>
+                  </tr>
+                ))}
+
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+
+                <tr className="no-border">
+                  <td colSpan="6"></td>
+                  <td>Total Amount :</td>
+                  <td className="text-danger fw-bolder">$2500.50</td>
+                </tr>
+
+                <tr className="no-border">
+                  <td colSpan="6"></td>
+                  <td>Total Tax :</td>
+                  <td className="text-danger fw-bolder">$2500.50</td>
+                </tr>
+
+                <tr className="no-border">
+                  <td colSpan="6"></td>
+                  <td>Total Discount :</td>
+                  <td className="text-danger fw-bolder">$2500.50</td>
+                </tr>
+
+                <tr className="no-border">
+                  <td colSpan="6"></td>
+                  <td>Bill Amount :</td>
+                  <td className="text-danger fw-bolder">$2500.50</td>
+                </tr>
+               
+              </tfoot>
+
+        </table>
+       </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Print</button>
+      </div>
+    </div>
+  </div>
+</div>
         </>
 
     )
