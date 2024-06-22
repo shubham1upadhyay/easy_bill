@@ -44,7 +44,6 @@ const CreateBillPage = ()=>{
 
       let i = 0;
       
-      const sNoUpdate = i++;
 
       const handlePrint = () => {
         const input = contentRef.current;
@@ -67,7 +66,7 @@ const CreateBillPage = ()=>{
           const billName = 'Bill_' + new Date().getTime(); 
           localStorage.setItem(billName, pdfUrl);
           localStorage.setItem('recentBillUrl', pdfUrl); 
-          
+
       const sNoUpdate = i++;
           pdf.save(`${sNoUpdate} bill.pdf`);
         }).catch((error) => {
