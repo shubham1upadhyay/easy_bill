@@ -26,11 +26,6 @@ const CreateBillPage = ()=>{
       }
     }, [rows]);
 
-    const generateBill = () => {
-      alert("working")
-    
-    };
-
     const billDetails = JSON.parse(localStorage.getItem("products")) || [];
     const userData = JSON.parse(localStorage.getItem('userData'));
 
