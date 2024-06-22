@@ -274,7 +274,7 @@ const ProductManagement = () => {
                 <th>MRP</th>
                 <th>Selling Price</th>
                 <th>Cost Price</th>
-                <th>Tax(%)</th>
+                <th>Tax</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -319,7 +319,8 @@ const ProductManagement = () => {
                         disabled={editIndex === -1}
                       />
                     ) : (
-                      product.productPrice
+                      // MRP
+                      `₹ ${product.productPrice}`   
                     )}
                   </td>
                   <td>
@@ -332,7 +333,7 @@ const ProductManagement = () => {
                         disabled={editIndex === -1}
                       />
                     ) : (
-                      product.sellingPrice
+                      `₹ ${product.sellingPrice}`
                     )}
                   </td>
                   <td>
@@ -345,7 +346,7 @@ const ProductManagement = () => {
                         disabled={editIndex === -1}
                       />
                     ) : (
-                      product.costPrice
+                      `₹${product.costPrice}`
                     )}
                   </td>
                   <td>
@@ -358,7 +359,7 @@ const ProductManagement = () => {
                         disabled={editIndex === -1}
                       />
                     ) : (
-                      product.tax
+                      `₹${product.tax}`
                     )}
                   </td>
                   <td>

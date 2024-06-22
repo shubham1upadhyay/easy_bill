@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
-import HomePage from './components/HomePage.jsx';
-import CreateBillPage from './components/CreateBillPage.jsx';
+import HomePage from './components/HomePage';
+import CreateBillPage from './components/CreateBillPage';
 import LoginPage from './components/LoginPage.jsx';
-import ProductManagement from './components/ProductManagement.jsx';
-import RecentBill from './components/RecentBill.jsx';
-import SignUp from './components/SignUp.jsx';
-import UserDetails from './components/UserDetails.jsx';
+import ProductManagement from './components/ProductManagement';
+import RecentBill from './components/RecentBill';
+import SignUp from './components/SignUp';
+import UserDetails from './components/UserDetails';
 
 import reportWebVitals from './reportWebVitals.js';
 
@@ -25,13 +25,9 @@ root.render(
         <Route path="/user-details" element={<UserDetails />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LoginPage />} />
-        
       </Routes>
     </Router>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
