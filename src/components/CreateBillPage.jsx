@@ -17,13 +17,12 @@ const CreateBillPage = ()=>{
 
     useEffect(() => {
       if (tableBodyRef.current) {
-        tableBodyRef.current.scrollTop = 0; // Scroll the table body to the top
+        tableBodyRef.current.scrollTop = 0;
       }
     }, [rows]);
 
     const generateBill = () => {
-      // Logic for downloading data
-      alert("Downloading data...");
+      alert("I am working");
     };
 
     return (
@@ -35,8 +34,7 @@ const CreateBillPage = ()=>{
     <div class="container">
 
            {/* <!-- create bill page --> */}
-        <div class="container-fluid create-bill-page-details" id="create-bill-page">
-
+        <div class="container-fluid create-bill">
             <div class="my-card">
                 <h6 class="text-primary fw-bolder" style={{"margin-left": "20px;"}}>Customer Details</h6>
                 <div class="text-danger">
@@ -63,7 +61,7 @@ const CreateBillPage = ()=>{
                  {/* <!-- product details --> */}
           <div class="prouct-details">
             <h6 class="text-primary fw-bolder">Product Details</h6>
-            <table className="responsive-table">
+            {/* <table className="responsive-table">
             <thead>
           <tr style={{"text-align": "right"}}>
                     <th colspan="8" id="product-add-btn">
@@ -71,34 +69,57 @@ const CreateBillPage = ()=>{
                     </th>
                   </tr>
             <tr className="tableHeader">
-              {Array.from({ length: 8 }, (_, index) => (
-                <th key={index}>Header {index + 1}</th>
-              ))}
+                <th>S No.</th>
+                <th>Name</th>
+                <th>MRP</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Tax($)</th>
+                <th>Discount($)</th>
+                <th>Amount</th>
             </tr>
           </thead>
-            </table>
-            <hr />
+            </table> */}
 
-            <div className="table-container">
+           
         <table className="responsive-table">
-         
-        <tbody>
+        <div className="tableHeaderDiv">
+        <thead>
+          <tr>
+                    <th colspan="8">
+                      <button class="btn btn-sn btn-info add-btn" onClick={addRow}>Add Items</button>
+                    </th>
+                  </tr>
+            <tr className="tableHeader">
+                <th>S No.</th>
+                <th>Name</th>
+                <th>MRP</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Tax($)</th>
+                <th>Discount($)</th>
+                <th>Amount</th>
+            </tr>
+          </thead>
+          </div>
+          <div className="table-container">
+        <tbody className="tableBody">
               {rows.map((row, rowIndex) => (
-                <tr key={rowIndex}>
+                <tr key={rowIndex} className="productColumn">
                   {row.map((cell, cellIndex) => (
-                    <td key={cellIndex}>Cell {rowIndex + 1}-{cellIndex + 1}</td>
+                    <td><input type="text" className="form-control"/></td>
                   ))}
                 </tr>
               ))}
               {rows.length > 0 && (
                 <tr>
-                  <td colSpan={8} className="text-center">
+                  <td colspan={8} className="text-center">
                     <button onClick={generateBill} className="download-btn btn btn-success">Generate Bill</button>
                   </td>
                 </tr>
               )}
             </tbody>
-
+</div>
 
         </table>
       </div>
@@ -107,7 +128,6 @@ const CreateBillPage = ()=>{
 
         </div>
 
-    </div>
     </div>
         </>
 

@@ -1,5 +1,4 @@
   .main-content {
-    padding: 20px;
     transition: margin-left 0.5s;
   }
   
@@ -7,16 +6,8 @@
     float: right;
   }
   
-  
-  .main-card {
-    border-radius: 40px 10px 30px 0px;
-    border: 2px solid #7b7474;
-    margin-top: 60px;
-  }
-  
-  .create-bill-page-details {
-    display: block;
-    margin-top: 60px;
+  .create-bill{
+    margin-top: 45px;
   }
   body::-webkit-scrollbar {
     display: none;
@@ -42,32 +33,52 @@
   }
   
   .table-container {
-    max-height: 300px;  
+    width: 100%;
+    max-height: 400px;  
     overflow-y: auto;  
-    overflow-x: auto;  
-    margin-bottom: 50px;
+    overflow-x: auto; 
+    scrollbar-width: none;
+  }
+  .tableBody{
+   width: 100%;
   }
   
   .responsive-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    white-space: nowrap;
   }
-  .tableHeader{
-    width: 100%;
+
+  .tableHeaderDiv {
+    width: 100%; 
+    /* border: 1px solid black;  */
+    overflow: hidden; 
+  }
+  
+  .tableHeader {
+    width: 100%; 
     border: 2px solid red;
-   
+    display: block;
+    overflow-x: auto; 
+    white-space: nowrap;
+    box-sizing: border-box; 
+  }
+  .tableHeader th{
+    /* border: 1px magenta solid; */
+    width: 250px;
   }
   .responsive-table th,
   .responsive-table td {
     color: black;
     padding: 8px;
-    text-align: left;
+    
   }
   .responsive-table tr {
     font-weight: bold;
     background-color: #ef7f7f;
     border-radius: 15px;
+    width: 100%;
   }
 
   

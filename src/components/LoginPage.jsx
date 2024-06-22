@@ -23,6 +23,15 @@ const LoginPage = () => {
   };
 
   const handleLogin = () => {
+
+    setError('');
+
+    // Check if email or password fields are empty
+    if (!loginData.email || !loginData.password) {
+      setError('Please enter your email and password.');
+      return;
+    }
+
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
 
     if (storedUserData) {
@@ -30,25 +39,16 @@ const LoginPage = () => {
 
       if (loginData.email === sellerEmail && loginData.password === sellerPassword) {
         setLoggingIn(true);
-       setTimeout(() => {
-      setLoggingIn(false); 
-      navigate('/homepage')
-    }, 2000); 
-        ;  
+        setTimeout(() => {
+          setLoggingIn(false);
+          navigate('/homepage');
+        }, 2000);
       } else {
         setError('Invalid email or password');
       }
-
-      if(loginData.email !== sellerEmail){
-          setError('No user data found. Please sign up first.');
-      }
-      else if(loginData.email === ''){
-        setError('Please enter following credentials.');
+    } else {
+      setError('No user data found. Please sign up first.');
     }
-    }
-
-
-   
   };
 
 

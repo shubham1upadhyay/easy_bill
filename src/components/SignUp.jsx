@@ -294,7 +294,8 @@ const SignUp = () => {
                 
               </div>
               <div class="m-2 p-2 text-center bg-dark">
-                <button type="button" class="btn btn-success" id="register" onClick={handleSave}>
+                <button type="button" class="btn btn-success" id="register"  data-bs-dismiss="modal"
+                  aria-label="Close" onClick={handleSave}>
                   Register
                 </button>
               </div>
