@@ -56,7 +56,7 @@ const SignUp = () => {
 
 
   return (
-    <div style={{"backgroundColor": " rgb(48, 47, 47)"}}>
+    <div className="signupParent">
       <section class="vh-100">
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">

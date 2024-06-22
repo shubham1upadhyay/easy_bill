@@ -12,7 +12,14 @@
   [contenteditable].form-control:focus {
     box-shadow: inset 1px 1px 0 red;
   }
-  
+  body{
+    background-color: rgb(48, 47, 47);
+  }
+  .signupParent{
+    background-color: rgb(48, 47, 47);
+  }
+
+
   .btn:focus,
   .btn:active:focus,
   .btn.active:focus,
