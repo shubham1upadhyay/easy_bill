@@ -1,0 +1,73 @@
+  .main-content {
+    padding: 20px;
+    transition: margin-left 0.5s;
+  }
+  
+  .add-btn{
+    float: right;
+  }
+  
+  
+  .main-card {
+    border-radius: 40px 10px 30px 0px;
+    border: 2px solid #7b7474;
+    margin-top: 60px;
+  }
+  
+  .create-bill-page-details {
+    display: block;
+    margin-top: 60px;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  textarea:focus,
+  textarea.form-control:focus,
+  input.form-control:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  navigationBar [type="text"].form-control:focus,
+  [type="password"].form-control:focus,
+  [type="email"].form-control:focus,
+  [type="tel"].form-control:focus,
+  [contenteditable].form-control:focus {
+    box-shadow: inset 1px 1px 0 none;
+  }
+
+  .table-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .table-container {
+    max-height: 300px;  
+    overflow-y: auto;  
+    overflow-x: auto;  
+    margin-bottom: 50px;
+  }
+  
+  .responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .tableHeader{
+    width: 100%;
+    border: 2px solid red;
+   
+  }
+  .responsive-table th,
+  .responsive-table td {
+    color: black;
+    padding: 8px;
+    text-align: left;
+  }
+  .responsive-table tr {
+    font-weight: bold;
+    background-color: #ef7f7f;
+    border-radius: 15px;
+  }
+
+  

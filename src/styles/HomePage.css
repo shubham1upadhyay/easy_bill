@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    ;
+  }
+  
+  .mYnavbar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    /* left: -250px; */
+    background-color: #333;
+    transition: left 0.5s;
+    z-index: 1;
+  }
+  
+  .mYnavbar.active {
+    left: 0;
+  }
+  
+  .mYnavbar ul {
+    list-style-type: none;
+    padding: 0px 20px;
+    margin-top: 80px;
+  }
+  
+  .mYnavbar li {
+    padding: 10px 0;
+  }
+  
+  .mYnavbar li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.5s;
+    color: white;
+    /* width: calc(100% - 200px); Initial width */
+  }
+  
+  .mYnavbar.active + .main-content {
+    /* width: 100%; */
+    margin-left: 250px;
+  }
+  .logout-box button{
+    position: fixed;
+    bottom: 20px;
+    width: 200px;
+  }
+  .toggle-btn {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* color: black; */
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 2;
+  }
+  
+  .toggle-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  
+  .user-details-btn {
+    background-color: rgb(34, 17, 17);
+    color: white;
+    font-weight: 700;
+    width: 95%;
+    border-radius: 20px;
+  }
+  .create-bill-btn {
+    background-color: rgb(34, 17, 17);
+    color: white;
+    font-weight: 700;
+    width: 95%;
+    border-radius: 20px;
+  }
+  .user-details-btn:focus,
+  .user-details-btn:active,
+  .user-details-btn.active {
+    background-color: #ee0f0f;
+    border-color: #f19722;
+  }
+  .create-bill-btn:focus,
+  .create-bill-btn:active,
+  .create-bill-btn.active {
+    background-color: #ee0f0f;
+    border-color: #f19722;
+  }
+  .create-bill-btn:hover{
+    background-color: #ee0f0f;
+    border-color: #f19722;
+  }
+  .user-details-btn:hover{
+    background-color: #ee0f0f;
+    border-color: #f19722;
+  }
+  
+  .main-card {
+    border-radius: 40px 10px 30px 0px;
+    /* border: 2px solid #7b7474; */
+    margin-top: 60px;
+    color: black;
+  }
+    table {
+    /* width: 100%; */
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    /* border: 1px solid #ddd; */
+    padding: 5px 20px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  .user-details-page{
+    display: block;
+    border: none;
+  }
+  .create-bill-page-details {
+    display: none;
+    margin-top: 60px;
+  }
+  .invoice-logo {
+    margin-top: -20px;
+  }
+  .invoice-logo img {
+    margin-left: 5px;
+    margin-top: -5px;
+  }
+  .invoice-page {
+    width: 100%;
+    display: none;
+    background-color: rgb(240, 238, 238);
+    padding: 30px 10px 0px 0px;
+    margin-top: 70px;
+    border: 1px red dotted;
+  
+  }
+  .invoice-page h4 {
+    border-bottom: 1px solid black;
+  }
+  
+  #download-btn {
+    text-align: center;
+    display: none;
+    /* width: 100%; */
+    margin-top: 60px;
+  }
+  
+  .invoice-list {
+    list-style: none;
+    font-weight: bolder;
+  }
+  .total-calculation {
+    margin-left: 70%;
+  }
+  .total-calculation p {
+    margin-top: -10px;
+  }
+  .bill-amount {
+    font-weight: 900;
+    border: 4px solid black;
+    padding: 5px 10px;
+    border-radius: 10px 5px;
+    margin-left: 10px;
+  }
+  #centeredText {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    font-size: 30px;
+    background-color: rgb(2, 2, 2);
+    color: white;
+    font-weight: 700;
+    padding: 20px;
+    border: 1px solid black;
+    z-index: 1000;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  textarea:focus,
+  textarea.form-control:focus,
+  input.form-control:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  navigationBar [type="text"].form-control:focus,
+  [type="password"].form-control:focus,
+  [type="email"].form-control:focus,
+  [type="tel"].form-control:focus,
+  [contenteditable].form-control:focus {
+    box-shadow: inset 1px 1px 0 none;
+  }
+  .hovered {
+    cursor: pointer;
+    background-color: white;
+    color: red;
+    border-radius: 10px;
+  }
+  .suggestion-dropdown li {
+    padding: 5px 15px;
+  }
+  #download-btn {
+    margin-top: 30px;
+    margin-left: 45%;
+  }
+  
+  
+  /*  */
+  .table-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .left-table,
+  .right-table {
+    width: calc(50% - 10px);
+  }
+  .left-table{
+    /* border: 1px red solid; */
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+  }
+  .right-table{
+    margin-left: 300px;
+    text-align: right;
+    /* border: 1px black solid; */
+    padding: 0px;
+  }
+  td{
+    width: 400px;
+  }
+  
+  .invoicetable{
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0px;
+    margin-top: -20px;
+    text-align: left;
+  }
+  .invoicetable td h6 {
+    margin: 0;
+  }

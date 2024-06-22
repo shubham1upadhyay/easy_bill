@@ -1,0 +1,72 @@
+.mYnavbar {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0; /* Ensure the navbar is fixed to the left */
+  background-color: #333;
+  transition: width 0.3s, left 0.3s;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.mYnavbar.collapsed {
+  width: 0; 
+  left: -80px;  
+}
+
+.mYnavbar ul {
+  list-style-type: none;
+  padding: 0px 20px;
+  margin-top: 80px;
+}
+
+.mYnavbar li {
+  padding: 10px 0;
+}
+
+.mYnavbar li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+#logoutBtn {
+  position: fixed;
+  bottom: 20px;
+  width: 200px;
+}
+
+.user-details-btn,
+.create-bill-btn {
+  background-color: rgb(34, 17, 17);
+  color: white;
+  font-weight: 700;
+  width: 95%;
+  border-radius: 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.user-details-btn:focus,
+.user-details-btn:active,
+.user-details-btn.active,
+.create-bill-btn:focus,
+.create-bill-btn:active,
+.create-bill-btn.active,
+.create-bill-btn:hover,
+.user-details-btn:hover {
+  background-color: #ee0f0f;
+  border-color: #f19722;
+}
+
+
+.main-content {
+  margin-left: 260px;  
+  transition: margin-left 0.3s;
+}
+
+.main-content.collapsed, .toggle-btn {
+  margin-left: 0;
+}

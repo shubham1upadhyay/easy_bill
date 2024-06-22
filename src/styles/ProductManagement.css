@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+
+  
+  #centeredText {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    font-size: 30px;
+    background-color: rgb(2, 2, 2);
+    color: white;
+    font-weight: 700;
+    padding: 20px;
+    border: 1px solid black;
+    z-index: 1000;
+  }
+  .container {
+    /* max-width: 800px; */
+    margin: 0 auto;
+    padding: 20px;
+    /* background-color: #fff; */
+    /* border-radius: 5px; */
+    box-shadow: 0 0 15px rgba(211, 42, 42, 0.1);
+  }
+  .stockNavbar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: white;
+  }
+  #productForm{
+    margin-top: 120px;
+  }
+  #productForm input,
+  #productForm button {
+    /* margin: 5px; */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .productItem {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  textarea:focus,
+  textarea.form-control:focus,
+  input.form-control:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  [type="text"].form-control:focus,
+  [type="password"].form-control:focus,
+  [type="email"].form-control:focus,
+  [type="tel"].form-control:focus,
+  [contenteditable].form-control:focus {
+    box-shadow: inset 1px 2px 0 red;
+  }
+  input {
+    cursor: pointer;
+  }
+  .highlighted-row {
+    border: 2px solid blue;
+  }
+  .searchBox{
+    width: 83%;
+    position: fixed;
+    top: 10px;
+    /* background-color: white; */
+    height: 40px;
+  }
+  .searchBox input{
+    height: 40px;
+    margin: 20px 20px;
+    width: 100%;
+    margin-left: -20px;
+    cursor: text;
+  }
+  .inventoryField{
+    width: 100px;
+    text-align: center;
+  }
+  body::-webkit-scrollbar{
+    display: none;
+  }
