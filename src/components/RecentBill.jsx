@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import LeftNavbar from "./LeftNavbar";
 import "../styles/RecentBill.css";
 import Navbar from "./Navbar";
+import CreateBillPage from "./CreateBillPage";
 
 const RecentBill = ()=>{
 
@@ -31,22 +32,9 @@ const RecentBill = ()=>{
           
         </tr>
       </thead>
-      <tbody id="recent-bills">
-        {/* <!-- <tr>
-          <td scope="row">
-            Coorg Trip
-          </td>
-          <td>khjjghghjhfghfg</td>
-          <td class="text-muted">12 Jul 2020, 12:30 PM</td>
-          <td class="d-flex justify-content-end align-items-center">
-           $52.9
-          </td>
-        </tr> --> */}
-       
-       
-      </tbody>
     </table>
   </div>
+
 </div>
         </>
 

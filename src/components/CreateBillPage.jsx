@@ -1,4 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+
 import "../styles/CreateBillPage.css";
 import LeftNavbar from "./LeftNavbar";
 import Navbar from "./Navbar";
@@ -36,6 +39,47 @@ const CreateBillPage = ()=>{
         const year = today.getFullYear();
         return `${day}-${month}-${year}`;
       };
+
+      const contentRef = useRef(null);
+
+      let i = 0;
+      
+      const sNoUpdate = i++;
+
+      const handlePrint = () => {
+        const input = contentRef.current;
+    
+        if (!input) {
+          console.error('Could not find content element');
+          return;
+        }
+    
+        html2canvas(input).then((canvas) => {
+          const imgData = canvas.toDataURL('image/png');
+          const pdf = new jsPDF();
+          const imgProps = pdf.getImageProperties(imgData);
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+          pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+          const pdfBlob = pdf.output('blob'); 
+          const pdfUrl = URL.createObjectURL(pdfBlob);
+  
+          const billName = 'Bill_' + new Date().getTime(); 
+          localStorage.setItem(billName, pdfUrl);
+          localStorage.setItem('recentBillUrl', pdfUrl); 
+          
+      const sNoUpdate = i++;
+          pdf.save(`${sNoUpdate} bill.pdf`);
+        }).catch((error) => {
+          console.error('Error generating PDF:', error);
+        });
+
+        
+      };
+    
+      useEffect(() => {
+        contentRef.current = document.querySelector('.modal-body');
+      }, []);
 
     return (
         <>
@@ -139,7 +183,7 @@ const CreateBillPage = ()=>{
               {rows.length > 0 && (
                 <tr>
                   <td colspan={9} className="text-center">
-                    <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="download-btn btn btn-success">Generate Bill</button>
+                    <button data-bs-toggle="modal" data-bs-target="#billDetails" className="download-btn btn btn-success">Generate Bill</button>
                   </td>
                 </tr>
               )}
@@ -157,7 +201,7 @@ const CreateBillPage = ()=>{
 
     {/* bill page modal will be updated here */}
 
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="billDetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-body">
@@ -261,11 +305,12 @@ const CreateBillPage = ()=>{
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Print</button>
+        <button type="button" class="btn btn-primary" onClick={handlePrint}>Print</button>
       </div>
     </div>
   </div>
 </div>
+
         </>
 
     )
