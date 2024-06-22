@@ -53,7 +53,7 @@ const LoginPage = () => {
 
 
   return (
-    <div style={{ backgroundColor: "rgb(48, 47, 47)" }}>
+    <div className="parent">
     <section class="vh-10 parent">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">

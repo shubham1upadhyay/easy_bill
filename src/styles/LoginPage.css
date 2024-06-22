@@ -1,6 +1,6 @@
  .parent {
     background-color: rgb(48, 47, 47);
-    height: 100vh;
+    height: 110%;
   }
   textarea:focus,
   textarea.form-control:focus,

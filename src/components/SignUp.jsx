@@ -57,7 +57,7 @@ const SignUp = () => {
 
   return (
     <div className="signupParent">
-      <section class="vh-100">
+      <section >
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-11">

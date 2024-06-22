@@ -41,6 +41,7 @@
   }
   .tableBody{
    width: 100%;
+   overflow-y: auto;
   }
   
   .responsive-table {
@@ -76,9 +77,23 @@
   }
   .responsive-table tr {
     font-weight: bold;
-    background-color: #ef7f7f;
+    background-color: #ecd1d1;
     border-radius: 15px;
     width: 100%;
   }
 
+  .tableBody tr {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+.tableBody::-webkit-scrollbar {
+  width: 0;
+  background: transparent;  
+}
+
+.tableBody {
+  -ms-overflow-style: none;  
+  scrollbar-width: thin;   
+}
   

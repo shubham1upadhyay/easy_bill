@@ -10,14 +10,18 @@ const CreateBillPage = ()=>{
 
   
     const addRow = () => {
-      const newRow = Array(8).fill(""); 
+      const newRow = Array(7).fill(""); 
       // setRows([...rows, newRow]);
       setRows((prevRows) => [...prevRows, newRow]);
     };
 
+    const deleteRow = (index) => {
+      setRows((prevRows) => prevRows.filter((_, rowIndex) => rowIndex !== index));
+    };
+
     useEffect(() => {
       if (tableBodyRef.current) {
-        tableBodyRef.current.scrollTop = 0;
+        tableBodyRef.current.scrollTop = tableBodyRef.current.scrollHeight;
       }
     }, [rows]);
 
@@ -96,24 +100,37 @@ const CreateBillPage = ()=>{
                 <th>MRP</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Tax($)</th>
-                <th>Discount($)</th>
+                <th>Tax</th>
+                <th>Discount</th>
                 <th>Amount</th>
+                <th>Action</th>
             </tr>
           </thead>
           </div>
           <div className="table-container">
-        <tbody className="tableBody">
-              {rows.map((row, rowIndex) => (
-                <tr key={rowIndex} className="productColumn">
-                  {row.map((cell, cellIndex) => (
-                    <td><input type="text" className="form-control"/></td>
-                  ))}
+        <tbody ref={tableBodyRef} className="tableBody">
+        {rows.map((row, rowIndex) => (
+                    <tr key={rowIndex} className="productColumn">
+                      <td><input type="text" className="form-control" value={rowIndex + 1} readOnly/></td>
+                      {row.map((cell, cellIndex) => (
+                        <td key={cellIndex}>
+                          <input type="text" className="form-control" />
+                        </td>
+                      ))}
+                       <td>
+                        <button
+                        
+                          className="btn text-center btn-sm btn-danger"
+                          onClick={() => deleteRow(rowIndex)}
+                        >
+                          X
+                        </button>
+                      </td>
                 </tr>
               ))}
               {rows.length > 0 && (
                 <tr>
-                  <td colspan={8} className="text-center">
+                  <td colspan={9} className="text-center">
                     <button onClick={generateBill} className="download-btn btn btn-success">Generate Bill</button>
                   </td>
                 </tr>
